@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(#0c0929, #0c2c1b);
+}
+/* TITULO PRINCIPAL */
+.title {
+    font-size: 5rem;
+    color: #dcdcdc;
+    animation: flipTitle 2s;
+}
+/* ANIMAÇÃO TITULO PRINCIPAL */
+@keyframes flipTitle {
+    from{
+        transform: rotateX(90deg);
+    }
+    to{
+        transform: rotateX(0deg);
+    }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* INPUT CEP */
+.containerInput {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 2rem 0;
+    display: flex;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.5);
+}
+.containerInput input {
+    background-color: transparent;
+    margin: 0.5rem;
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    margin-right: 8px;
+    color: #f1f1f1;
+}
+.containerInput input::placeholder {
+    color: #f1f1f1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* BOTÃO DE PESQUISA CEP */
+.buttonSearch {
+    background-color: transparent;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.buttonSearch:hover {
+    transform: scale(1.3);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* RESPOSTA DA PESQUISA CEP */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f1f1f1a4;
+    border-radius: 1rem;
+    width: 400px;
+    padding: 0.8rem;
 }
-
-.App-link {
-  color: #61dafb;
+/* TITULO RESPOSTA */
+.main h2 {
+    margin: 1rem 0;
+    font-size: 40px;
 }
+/* CONTEUDO REESPOSTA */
+.main span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+/* RESPONSIVIDADE */
+@media (max-width: 680px) {
+    .title{
+        font-size: 2.5rem;
+    }
+    .containerInput {
+        padding: 0.5rem;
+    }
+    .main {
+        width: 80%;
+        padding: 2rem;
+    }
+    .main h2 {
+        font-size: 2rem;
+    }
+    .main span {
+        font-size: 0.8rem;
+    }
+    
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
